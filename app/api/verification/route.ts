@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
 
     // Subir documentos a Supabase Storage (bucket privado)
     const uploadFile = async (file: File, path: string) => {
-      const { data, error } = await adminSupabase.storage
+      const { data, error } = await getAdminSupabase().storage
         .from('verifications')
         .upload(path, file, { upsert: true })
       if (error) throw error
