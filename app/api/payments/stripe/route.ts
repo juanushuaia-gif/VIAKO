@@ -1,0 +1,83 @@
+// app/api/payments/stripe/route.ts
+import { NextRequest, NextResponse } from 'next/server'
+import { createClient } from '@/lib/supabase/server'
+import Stripe from 'stripe'
+
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, { apiVersion: '2024-12-18.acacia' })
+
+// POST — crear sesión de pago con Stripe
+export async function POST(req: NextRequest) {
+  try {
+    const supabase = await createClient()
+    const { data: { user } } = await supabase.auth.getUser()
+    if (!user) return NextResponse.json({ error: 'No autenticado' }, { status: 401 })
+
+    const body = await req.json()
+    const { type, experience_id, date_id, guests, pass_type } = body
+
+    let lineItems: Stripe.Checkout.SessionCreateParams.LineItem[] = []
+    let metadata: Record<string, string> = { user_id: user.id, type }
+
+    if (type === 'experience') {
+      // Reserva de experiencia
+      const { data: experience } = await supabase
+        .from('experiences')
+        .select('title, price, cover_image')
+        .eq('id', experience_id)
+        .single()
+
+      if (!experience) throw new Error('Experiencia no encontrada')
+
+      lineItems = [{
+        price_data: {
+          currency: 'usd',
+          product_data: {
+            name: experience.title,
+            images: experience.cover_image ? [experience.cover_image] : [],
+          },
+          unit_amount: Math.round((experience.price / 1000) * 100), // Convertir ARS a USD aprox
+        },
+        quantity: guests,
+      }]
+
+      metadata = { ...metadata, experience_id, date_id, guests: String(guests) }
+
+    } else if (type === 'pass') {
+      // VIAKO PASS
+      const PASS_PRICES: Record<string, { price: number; name: string; days: number }> = {
+        weekend: { price: 500, name: 'VIAKO PASS — Finde (3 días)', days: 3 },
+        week: { price: 1200, name: 'VIAKO PASS — Semana (7 días)', days: 7 },
+        month: { price: 2800, name: 'VIAKO PASS — Ruta larga (30 días)', days: 30 },
+        annual: { price: 6000, name: 'VIAKO PASS — Anual ilimitado', days: 365 },
+      }
+
+      const passConfig = PASS_PRICES[pass_type]
+      if (!passConfig) throw new Error('Tipo de PASS inválido')
+
+      lineItems = [{
+        price_data: {
+          currency: 'usd',
+          product_data: { name: passConfig.name },
+          unit_amount: passConfig.price,
+        },
+        quantity: 1,
+      }]
+
+      metadata = { ...metadata, pass_type, days: String(passConfig.days) }
+    }
+
+    const session = await stripe.checkout.sessions.create({
+      payment_method_types: ['card'],
+      line_items: lineItems,
+      mode: 'payment',
+      success_url: `${process.env.NEXT_PUBLIC_APP_URL}/payment/success?session_id={CHECKOUT_SESSION_ID}`,
+      cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/payment/cancelled`,
+      customer_email: user.email,
+      metadata,
+    })
+
+    return NextResponse.json({ session_id: session.id, url: session.url })
+  } catch (error: any) {
+    return NextResponse.json({ error: error.message }, { status: 500 })
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "nav": {
+    "experiences": "Experiences",
+    "map": "Map",
+    "chat": "Chat",
+    "profile": "Profile",
+    "organizer": "Organizer",
+    "start": "Get started free"
+  },
+  "hero": {
+    "eyebrow": "Authentic travel · Argentina & beyond",
+    "title": "Travel like no one else does",
+    "subtitle": "Real experiences organized by local people. Motorhome, routes, getaways and events. With traveler map, safety features and travel assistant.",
+    "cta_explore": "Explore experiences",
+    "cta_organizer": "I'm an organizer"
+  },
+  "pass": {
+    "title": "VIAKO PASS",
+    "subtitle": "Pay only when you travel",
+    "free_label": "Explorer — Always free",
+    "weekend": "Weekend",
+    "week": "Week",
+    "month": "Long route",
+    "annual": "Annual unlimited",
+    "days": "days",
+    "per_day": "per day",
+    "activate": "Activate VIAKO PASS",
+    "scan": "Scan and explore"
+  },
+  "emergency": {
+    "title": "Emergency button",
+    "hold": "Hold to activate",
+    "confirm": "Confirm emergency",
+    "cancel": "Cancel",
+    "calling": "Calling emergency services...",
+    "sending_location": "Sending location...",
+    "alert_sent": "Alert sent",
+    "contact_notified": "Your emergency contact was notified"
+  },
+  "map": {
+    "title": "Traveler map",
+    "active_travelers": "active travelers now",
+    "meetup_request": "Meetup request",
+    "meetup_accept": "Accept meetup",
+    "meetup_decline": "Decline",
+    "visibility": "My visibility",
+    "invisible": "Invisible",
+    "group_only": "My group only",
+    "verified_only": "VIAKO travelers",
+    "public": "Open community"
+  },
+  "verification": {
+    "title": "Verify your identity",
+    "subtitle": "We need to verify your identity so you can book experiences",
+    "step1": "Personal information",
+    "step2": "Identity document",
+    "step3": "Selfie with document",
+    "step4": "Emergency contact",
+    "upload_front": "Upload document front",
+    "upload_back": "Upload document back",
+    "upload_selfie": "Take selfie",
+    "submit": "Submit verification",
+    "pending": "Verification in progress",
+    "verified": "Identity verified",
+    "rejected": "Verification rejected"
+  },
+  "assistant": {
+    "title": "Your travel assistant",
+    "placeholder": "Where do you want to go?",
+    "send": "Send",
+    "thinking": "Thinking..."
+  },
+  "auth": {
+    "login": "Sign in",
+    "register": "Create account",
+    "email": "Email",
+    "password": "Password",
+    "full_name": "Full name",
+    "forgot_password": "Forgot your password?",
+    "no_account": "Don't have an account?",
+    "have_account": "Already have an account?",
+    "sign_up_free": "Sign up free",
+    "want_organizer": "I want to publish experiences"
+  },
+  "booking": {
+    "reserve": "Book now",
+    "guests": "Guests",
+    "date": "Date",
+    "total": "Total",
+    "pay_mp": "Pay with MercadoPago",
+    "pay_stripe": "Pay with card",
+    "no_charge": "You won't be charged until confirmed",
+    "spots_left": "spots available",
+    "sold_out": "Sold out"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "An error occurred",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "back": "Back",
+    "next": "Next",
+    "submit": "Submit",
+    "edit": "Edit",
+    "delete": "Delete",
+    "view": "View",
+    "share": "Share"
+  }
+}

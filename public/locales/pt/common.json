@@ -1,0 +1,110 @@
+{
+  "nav": {
+    "experiences": "Experiências",
+    "map": "Mapa",
+    "chat": "Chat",
+    "profile": "Perfil",
+    "organizer": "Organizador",
+    "start": "Começar grátis"
+  },
+  "hero": {
+    "eyebrow": "Turismo autêntico · Argentina e mais",
+    "title": "Viaje como ninguém mais viaja",
+    "subtitle": "Experiências reais organizadas por pessoas locais. Motorhome, rotas, escapadas e eventos. Com mapa de viajantes, segurança e assistente de viagem.",
+    "cta_explore": "Explorar experiências",
+    "cta_organizer": "Sou organizador"
+  },
+  "pass": {
+    "title": "VIAKO PASS",
+    "subtitle": "Pague apenas quando viajar",
+    "free_label": "Explorador — Sempre grátis",
+    "weekend": "Final de semana",
+    "week": "Semana",
+    "month": "Rota longa",
+    "annual": "Anual ilimitado",
+    "days": "dias",
+    "per_day": "por dia",
+    "activate": "Ativar VIAKO PASS",
+    "scan": "Escaneie e explore"
+  },
+  "emergency": {
+    "title": "Botão de emergência",
+    "hold": "Pressione e segure",
+    "confirm": "Confirmar emergência",
+    "cancel": "Cancelar",
+    "calling": "Ligando para emergências...",
+    "sending_location": "Enviando localização...",
+    "alert_sent": "Alerta enviado",
+    "contact_notified": "Seu contato de emergência foi notificado"
+  },
+  "map": {
+    "title": "Mapa de viajantes",
+    "active_travelers": "viajantes ativos agora",
+    "meetup_request": "Solicitação de encontro",
+    "meetup_accept": "Aceitar encontro",
+    "meetup_decline": "Recusar",
+    "visibility": "Minha visibilidade",
+    "invisible": "Invisível",
+    "group_only": "Só meu grupo",
+    "verified_only": "Viajantes VIAKO",
+    "public": "Comunidade aberta"
+  },
+  "verification": {
+    "title": "Verifique sua identidade",
+    "subtitle": "Precisamos verificar sua identidade para que você possa reservar experiências",
+    "step1": "Dados pessoais",
+    "step2": "Documento de identidade",
+    "step3": "Selfie com documento",
+    "step4": "Contato de emergência",
+    "upload_front": "Enviar frente do documento",
+    "upload_back": "Enviar verso do documento",
+    "upload_selfie": "Tirar selfie",
+    "submit": "Enviar verificação",
+    "pending": "Verificação em andamento",
+    "verified": "Identidade verificada",
+    "rejected": "Verificação rejeitada"
+  },
+  "assistant": {
+    "title": "Seu assistente de viagem",
+    "placeholder": "Para onde você quer ir?",
+    "send": "Enviar",
+    "thinking": "Pensando..."
+  },
+  "auth": {
+    "login": "Entrar",
+    "register": "Criar conta",
+    "email": "E-mail",
+    "password": "Senha",
+    "full_name": "Nome completo",
+    "forgot_password": "Esqueceu sua senha?",
+    "no_account": "Não tem uma conta?",
+    "have_account": "Já tem uma conta?",
+    "sign_up_free": "Cadastre-se grátis",
+    "want_organizer": "Quero publicar experiências"
+  },
+  "booking": {
+    "reserve": "Reservar",
+    "guests": "Pessoas",
+    "date": "Data",
+    "total": "Total",
+    "pay_mp": "Pagar com MercadoPago",
+    "pay_stripe": "Pagar com cartão",
+    "no_charge": "Você não será cobrado até a confirmação",
+    "spots_left": "vagas disponíveis",
+    "sold_out": "Esgotado"
+  },
+  "common": {
+    "loading": "Carregando...",
+    "error": "Ocorreu um erro",
+    "save": "Salvar",
+    "cancel": "Cancelar",
+    "confirm": "Confirmar",
+    "back": "Voltar",
+    "next": "Próximo",
+    "submit": "Enviar",
+    "edit": "Editar",
+    "delete": "Excluir",
+    "view": "Ver",
+    "share": "Compartilhar"
+  }
+}
