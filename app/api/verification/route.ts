@@ -36,7 +36,7 @@ export async function POST(req: NextRequest) {
     const selfiePath = await uploadFile(selfie, `${user.id}/selfie_${Date.now()}`)
 
     // Crear registro de verificación
-    const { data: verification } = await adminSupabase
+    const { data: verification } = await getAdminSupabase()
       .from('identity_verifications')
       .insert({
         user_id: user.id,
@@ -50,7 +50,7 @@ export async function POST(req: NextRequest) {
       .single()
 
     // Actualizar perfil a "pending"
-    await adminSupabase
+    await getAdminSupabase()
       .from('profiles')
       .update({ verification_status: 'pending' })
       .eq('id', user.id)
