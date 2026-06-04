@@ -11,8 +11,8 @@ interface Props {
 export default function EmergencyButton({ countryCode = 'AR', onActivated }: Props) {
   const [state, setstate] = useState<'idle' | 'holding' | 'confirming' | 'active' | 'calling'>('idle')
   const [progress, setProgress] = useState(0)
-  const holdTimer = useRef<NodeJS.Timeout>()
-  const progressTimer = useRef<NodeJS.Timeout>()
+  const holdTimer = useRef<NodeJS.Timeout | null>(null)
+  const progressTimer = useRef<NodeJS.Timeout | null>(null)
 
   const HOLD_DURATION = 3000
 
