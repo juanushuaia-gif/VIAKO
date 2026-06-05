@@ -8,9 +8,7 @@ const nextConfig = {
       { protocol: 'https', hostname: '**.cdninstagram.com' },
     ],
   },
-  experimental: {
-    serverComponentsExternalPackages: ['twilio'],
-  },
+  serverExternalPackages: ['twilio'],
 }
 
 module.exports = nextConfig
