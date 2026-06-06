@@ -1,19 +1,6 @@
 // app/layout.tsx
 import type { Metadata } from 'next'
-import { Playfair_Display, DM_Sans } from 'next/font/google'
 import './globals.css'
-
-const playfair = Playfair_Display({
-  subsets: ['latin'],
-  variable: '--font-display',
-  display: 'swap',
-})
-
-const dmSans = DM_Sans({
-  subsets: ['latin'],
-  variable: '--font-body',
-  display: 'swap',
-})
 
 export const metadata: Metadata = {
   title: 'VIAKO — Experiencias reales, viajes auténticos',
@@ -31,7 +18,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="es" className={`${playfair.variable} ${dmSans.variable}`}>
+    <html lang="es">
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400..900&family=DM+Sans:wght@100..1000&display=swap" rel="stylesheet" />
+      </head>
       <body className="bg-viako-dark text-viako-sand font-body antialiased">
         {children}
       </body>
